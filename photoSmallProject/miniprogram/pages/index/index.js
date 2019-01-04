@@ -8,14 +8,19 @@ Page({
     isUserInfo: false,
     logged: false,
     takeSession: false,
-    requestResult: ''
+    requestResult: '',
+      title: ''
   },
 
-  onLoad: function() {
+    onLoad: function (options) {
+        this.setData({
+            title: options.title
+        })
     if (!wx.cloud) {
       wx.redirectTo({
         url: '../chooseLib/chooseLib',
       })
+        
       return
     }
 
