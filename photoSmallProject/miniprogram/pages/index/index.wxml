@@ -1,0 +1,41 @@
+<!--index.wxml-->
+<view class="container">
+
+    <!-- 用户 openid -->
+    <view class="userinfo">
+        <button 
+            open-type="getUserInfo" 
+            bindgetuserinfo="onGetUserInfo"
+            class="userinfo-avatar"
+            style="background-image: url({{avatarUrl}})"
+        ></button>
+        <!-- 用户信息的展示 -->
+        <view wx:if="{{!isUserInfo}}">
+            <button class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button>
+        </view>
+        <block wx:else>
+            <text>{{userInfo.nickName}}</text>
+        </block>
+    </view>
+    <view class="uploader">
+        <view class='uploader-radio'>
+            <radio-group bindchange='radioChange'>
+                <radio value='singe' checked>单张上传</radio>
+                <radio value='more'>压缩上传</radio>
+            </radio-group>
+        </view>
+        <view class='uploader-block'>
+            <image
+                class='uploader-image'
+                wx:if="{{imgUrl}}"
+                src='{{imgUrl}}'
+            ></image>
+            <text class='uploader-text' wx:else>+</text>
+        </view>
+        <view class='uploader-foot'>
+            <button class='uploader-foot-btn uploader-btn-sure'>生成订单</button>
+            <button class='uploader-foot-btn'>重新上传</button>
+        </view>
+    </view>
+
+</view>
