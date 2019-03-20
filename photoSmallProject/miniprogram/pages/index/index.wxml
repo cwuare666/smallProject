@@ -37,7 +37,8 @@
             <button class='uploader-foot-btn'>重新上传</button>
         </view>
     </view>
-    <view style="text-align:center">{{title}}</view>
+    <view></view>
+    <!-- <view style="text-align:center">{{title}}</view> -->
     <view>点击左上角返回回到之前页面</view>
     <view class="btn-area">
         <navigator
@@ -48,7 +49,7 @@
             跳转到新页面
         </navigator>
         <navigator
-            url="../order/order?title=redirect"
+            url="../test/test?title=redirect"
             open-type="redirect"
             hover-class="other-navigator-hover"
         >

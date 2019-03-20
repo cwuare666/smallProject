@@ -13,9 +13,9 @@ Page({
   },
 
     onLoad: function (options) {
-        this.setData({
-            title: options.title
-        })
+        // this.setData({
+        //     title: options.title
+        // })
     if (!wx.cloud) {
       wx.redirectTo({
         url: '../chooseLib/chooseLib',
